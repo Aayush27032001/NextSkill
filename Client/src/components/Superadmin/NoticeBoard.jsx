@@ -8,7 +8,7 @@ function NoticeBoard() {
     useEffect(() => {
         const fetchNotices = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/notices');
+                const response = await fetch('https://nextskill-9bug.onrender.com/api/notices');
                 if (response.ok) {
                     const data = await response.json();
                     setNotices(data);

@@ -33,7 +33,7 @@ function SuperAdminDashboard() {
     
     const fetchEducators = async () => {
         try {
-          const response = await axios.get('http://localhost:5000/api/educators');
+          const response = await axios.get('https://nextskill-9bug.onrender.com/api/educators');
           setEducators(response.data);
         } catch (error) {
           console.error('Error fetching educators:', error);
@@ -65,7 +65,7 @@ function SuperAdminDashboard() {
     const handleNoticeSubmit = async (e) => {
         e.preventDefault();
         try {
-          await axios.post('http://localhost:5000/api/notices', { message: notice, targetAudience });
+          await axios.post('https://nextskill-9bug.onrender.com/api/notices', { message: notice, targetAudience });
           alert('Notice posted successfully');
           setNotice(''); // Reset form
           setTargetAudience(''); // Reset selector
@@ -117,7 +117,7 @@ function SuperAdminDashboard() {
     const handleCourseSave = async (event) => {
         console.log('handleCourseSave called', courseInfo);
         event.preventDefault();
-        const url = courseInfo._id ? `http://localhost:5000/api/courses/${courseInfo._id}` : 'http://localhost:5000/api/courses';
+        const url = courseInfo._id ? `https://nextskill-9bug.onrender.com/api/courses/${courseInfo._id}` : 'https://nextskill-9bug.onrender.com/api/courses';
         const method = courseInfo._id ? 'PUT' : 'POST';
 
         try {

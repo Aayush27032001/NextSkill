@@ -20,7 +20,7 @@ function CoursesPage() {
     event.preventDefault();
     setSaving(true);
   
-    const url = course._id ? `http://localhost:5000/api/courses/${course._id}` : 'http://localhost:5000/api/courses';
+    const url = course._id ? `https://nextskill-9bug.onrender.com/api/courses/${course._id}` : 'https://nextskill-9bug.onrender.com/api/courses';
     const method = course._id ? 'PUT' : 'POST';
   
     fetch(url, {
@@ -50,7 +50,7 @@ function CoursesPage() {
   
   useEffect(() => {
     console.log('Fetching courses...'); // Log when fetching courses
-    fetch('http://localhost:5000/api/courses')
+    fetch('https://nextskill-9bug.onrender.com/api/courses')
       .then(response => response.json())
       .then(data => {
         console.log('Courses fetched:', data); // Log fetched courses
@@ -76,7 +76,7 @@ function CoursesPage() {
       return;
     }
     
-    fetch(`http://localhost:5000/api/courses/${courseId}`, {
+    fetch(`https://nextskill-9bug.onrender.com/api/courses/${courseId}`, {
       method: 'DELETE',
     })
     .then(() => {
